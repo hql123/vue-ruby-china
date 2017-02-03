@@ -7,8 +7,12 @@ const route = new Router({
   mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/top/:page(\\d+)?', component: createListView('top') },
-    { path: '/', redirect: '/top' },
+    { path: '/topics', component: createListView('topics') },
+    { path: '/wiki', component: createListView('wiki') },
+    { path: '/sites', component: createListView('sites') },
+    { path: '/homeland', component: createListView('homeland') },
+    { path: '/jobs', component: createListView('jobs') },
+    { path: '/', redirect: '/topics' },
   ],
 });
 

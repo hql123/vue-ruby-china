@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    Ruby China Clone with Vue.js
+    Ruby China Clone with Vue.js©2017 Created By hql
   </footer>
 </template>
 <style lang="stylus">

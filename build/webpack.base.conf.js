@@ -1,5 +1,6 @@
 var path = require('path')
 var config = require('../config')
+var webpack = require('webpack')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 var SWPrecachePlugin = require('sw-precache-webpack-plugin')
@@ -27,7 +28,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'jquery': 'jquery',
     }
   },
   resolveLoader: {
@@ -39,6 +41,10 @@ module.exports = {
       filename: 'service-worker.js',
       dontCacheBustUrlsMatching: /./,
       staticFileGlobsIgnorePatterns: [/index\.html$/, /\.map$/]
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     }),
   ],
   module: {

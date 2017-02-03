@@ -2,7 +2,7 @@
   <div class="news-view">
     {{loading}}
     <transition :name="transition">
-      <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
+      <div class="news-list">
         <transition-group tag="ul" name="item">
 
         </transition-group>
@@ -11,7 +11,6 @@
   </div>
 </template>
 <script>
-let isInitialRender = true;
 
 export default {
   name: 'item-list',
@@ -24,27 +23,9 @@ export default {
     const data = {
       loading: false,
       transition: 'slide-up',
-      displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
-      displayedItems: isInitialRender ? this.$store.getters.activeItems : [],
     };
-    isInitialRender = false;
     return data;
   },
-
-  computed: {
-    page() {
-      return Number(this.$store.state.route.params.page) || 1;
-    },
-    maxPage() {
-      const { itemsPerPage, lists } = this.$store.state;
-      return Math.ceil(lists[this.type].length / itemsPerPage);
-    },
-    hasMore() {
-      return this.page < this.maxPage;
-    },
-  },
-
-
   methods: {
 
   },

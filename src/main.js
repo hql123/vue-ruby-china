@@ -1,5 +1,6 @@
 /* eslint-disable */
 import app from './views/app';
+import './assets/js/bootstrap.min';
 
 // actually mount to DOM
 app.$mount('#app');

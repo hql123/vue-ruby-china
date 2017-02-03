@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <HeaderComponent></HeaderComponent>
-    <transition name="fade" mode="out-in">
-      <router-view class="view"></router-view>
-    </transition>
+    <HeaderComponent :tab={current} />
+    <div class="container">
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </div>
     <FooterComponent></FooterComponent>
   </div>
 </template>
@@ -17,11 +19,22 @@ export default {
     HeaderComponent,
     FooterComponent,
   },
+  // eslint-disable-next-line
+  
+
+  computed: {
+    current() {
+      return this.$route.path.split('/')[1];
+    },
+  },
 };
 </script>
-<style lang="sass">
-  @import '../assets/stylesheets/app.scss'
-</style>
-<style lang="stylus">
+<style lang="scss">
+  .fade-enter-active, .fade-leave-active{
+    transition: all .2s ease;
+  }
+  .fade-enter, .fade-leave-active{
+    opacity: 0;
+  }
 
 </style>
