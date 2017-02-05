@@ -34,7 +34,7 @@
 export default {
   name: 'header',
   props: {
-    tab: Object,
+    tab: String,
   },
   computed: {
     current() {
@@ -49,7 +49,7 @@ export default {
         'signin': 6,
       };
       /*eslint-disable */
-      return tabs[this.tab.current];
+      return tabs[this.tab];
     },
   },
 };
