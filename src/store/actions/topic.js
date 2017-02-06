@@ -1,5 +1,5 @@
 import { fetchTopicsList } from './api';
-import types from '../store/mutation-types';
+import types from '../mutation-types';
 
 export const refreshTopics = ({ commit }, { tab }) => {
   commit(types.REFRESH_TOPICS, {

@@ -16,7 +16,21 @@ const fetchGet = (query) => {
 };
 
 function translateOptions(options) {
-  return options === undefined ? 'offset=0&limit=25' : `${options}&offset=0&limit=25`;
+  if (options === undefined) {
+    return 'offset=0&limit=25';
+  }
+  if (options.indexOf('limit') === -1 && options.indexOf('offset') > -1) {
+    return `${options}&limit=25`;
+  }
+  if (options.indexOf('limit') > -1 && options.indexOf('offset') === -1) {
+    return `${options}&offset=0`;
+  }
+  if (options.indexOf('limit') > -1 && options.indexOf('offset') > -1) {
+    return options;
+  }
+  if (options.indexOf('limit') === -1 && options.indexOf('offset') === -1) {
+    return `${options}&offset=0&limit=25`;
+  }
 }
 
 const fetchDefaultTopics = (options = '') => {
@@ -31,6 +45,9 @@ const fetchNoReplyTopics = (options = '') => {
 const fetchRecentTopics = (options = '') => {
   return fetchGet(`/topics?type=recent&${options}`);
 };
+const fetchExcellentTopics = (options = '') => {
+  return fetchGet(`/topics?type=excellent&${options}`);
+};
 
 export const fetchTopicsList = (tab, options) => {
   const newOptions = translateOptions(options);
@@ -43,6 +60,8 @@ export const fetchTopicsList = (tab, options) => {
       return fetchNoReplyTopics(newOptions);
     case 'recent':
       return fetchRecentTopics(newOptions);
+    case 'excellent':
+      return fetchExcellentTopics(newOptions);
     default:
       return fetchDefaultTopics(newOptions);
   }

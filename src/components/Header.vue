@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="header-brand navbar-brand" href="/"><b>Ruby</b>&nbsp;China</a>
+        <router-link class="header-brand navbar-brand" to="/"><b>Ruby</b>&nbsp;China</router-link>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id="nav-menu">

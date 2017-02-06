@@ -1,5 +1,5 @@
 
-import * as nodeActions from '../../actions/node';
+import * as nodeActions from '../actions/node';
 import types from '../mutation-types';
 
 const initialState = {

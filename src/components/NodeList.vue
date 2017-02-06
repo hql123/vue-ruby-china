@@ -1,5 +1,5 @@
 <template>
-  <div class="panel panel-default" id="node-selector">
+  <div class="panel panel-default" :class="{ 'index-sections': home, 'node-selector': !home }">
     <div v-if="home" class="panel-heading">讨论节点分类导航</div>
     <div class="panel-body">
       <div class="row node-list">
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss">
-#node-selector{
+.node-selector{
   box-shadow: 0 0 0;
   padding: 0;
   margin: 0;
@@ -33,5 +33,14 @@ export default {
     padding: 0 20px;
     margin: 0;
   }
+}
+.index-sections{
+  .panel-heading{
+    background: #fafafa;
+    padding: 6px 15px;
+    border-bottom-color: #eee;
+    color: #777;
+  }
+
 }
 </style>

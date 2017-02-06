@@ -2,23 +2,17 @@
   <div class="node media">
     <label class="media-left">{{node.section}}</label>
     <span class="nodes media-body">
-      <span v-for="item in node.data" :key="item.id" class="name" @click="toggleModal"><router-link :title="item.name" :to="'/topics?node_id=' + item.id">{{item.name}}</router-link></span>
+      <span v-for="item in node.data" :key="item.id" class="name"><router-link :title="item.name" :to="'/topics?node_id=' + item.id">{{item.name}}</router-link></span>
     </span>
   </div>
 </template>
 
 <script>
-import $ from 'jquery';
 
 export default {
   name: 'node-item',
   props: {
     node: Object,
-  },
-  methods: {
-    toggleModal() {
-      $('#nodeModal').modal('toggle');
-    },
   },
 };
 

@@ -1,5 +1,5 @@
 import { fetchNodesList } from './api';
-import types from '../store/mutation-types';
+import types from '../mutation-types';
 
 export const refreshNodes = ({ commit }) => {
   commit(types.REFRESH_NODES);

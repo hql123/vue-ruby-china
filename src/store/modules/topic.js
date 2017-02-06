@@ -1,5 +1,5 @@
 
-import * as topicActions from '../../actions/topic';
+import * as topicActions from '../actions/topic';
 import types from '../mutation-types';
 
 const initialState = {
@@ -14,6 +14,7 @@ const state = {
     popular: initialState,
     recent: initialState,
     no_reply: initialState,
+    excellent: initialState,
   },
 };
 

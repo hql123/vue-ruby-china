@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import { mapState, mapGetters } from 'vuex';
+import $ from 'jquery';
 import ItemList from '../components/ItemList';
 import Sider from '../components/Sider';
 import TabHeader from '../components/TabHeader';
@@ -36,6 +37,7 @@ const createListView = tab => ({
     options(to, from){
       this.fetchNodes();
       this.fetchTopics();
+      this.hideModal();
     },
   },
   render(createElement) {
@@ -69,6 +71,7 @@ const createListView = tab => ({
   beforeMount() {
     this.fetchNodes();
     this.fetchTopics();
+    this.hideModal();
   },
   methods: {
     fetchNodes() {
@@ -78,6 +81,11 @@ const createListView = tab => ({
       const { newOptions } = this.activeType;
       this.$store.dispatch('refreshTopics', { tab });
       this.$store.dispatch('fetchTopicsIfNeeded', { tab, options: newOptions });
+    },
+    hideModal() {
+      $('#nodeModal').modal('hide');
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
     },
   },
 });
