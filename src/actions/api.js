@@ -47,3 +47,7 @@ export const fetchTopicsList = (tab, options) => {
       return fetchDefaultTopics(newOptions);
   }
 };
+
+export const fetchNodesList = () => {
+  return fetchGet('/nodes');
+}

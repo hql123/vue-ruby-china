@@ -22,7 +22,7 @@ export default {
     Item,
   },
   props: {
-    tab: String,
+    current: Array,
     loading: false,
     items: Array,
   },

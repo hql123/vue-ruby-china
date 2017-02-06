@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent :tab="current" />
-    <div class="container">
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
     <FooterComponent></FooterComponent>
   </div>
 </template>

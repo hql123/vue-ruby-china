@@ -11,6 +11,9 @@ const route = new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     { path: '/topics', component: createListView('default') },
+    { path: '/topics/popular', component: createListView('popular') },
+    { path: '/topics/no_reply', component: createListView('no_reply') },
+    { path: '/topics/last', component: createListView('recent') },
     { path: '/wiki', component: Wiki },
     { path: '/sites', component: Sites },
     { path: '/homeland', component: createListView('default') },
