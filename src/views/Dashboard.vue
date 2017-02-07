@@ -194,6 +194,7 @@ export default {
       }
     }
   }
+
   .panel{
     .panel-heading {
       padding: 6px 15px;
@@ -253,6 +254,7 @@ export default {
       text-decoration: underline;
     }
   }
+
 }
 
 </style>

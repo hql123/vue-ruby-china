@@ -15,7 +15,7 @@ const createListView = tab => ({
   computed: {
     node() {
       const { newOptions } = this.$store.getters.activeType;
-      const nodeid = newOptions ? newOptions.split('node_id=')[1].split('&')[0] : 0;
+      const nodeid = newOptions.indexOf('node_id') > -1 ? newOptions.split('node_id=')[1].split('&')[0] : 0;
       return nodeid > 0 ? this.nodes.find(item => item.id === Number(nodeid)) : {};
     },
     nodesGroup() {
@@ -54,10 +54,8 @@ const createListView = tab => ({
             createElement(
               ItemList,
               { props: {
-                current: this.current,
                 loading: this.loading,
                 items: this.items,
-                node: this.node,
               } }
             ),
           ]),

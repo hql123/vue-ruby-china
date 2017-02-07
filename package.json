@@ -4,6 +4,7 @@
   "description": "Ruby China Clone",
   "author": "hql <he.qinlu@163.com>",
   "private": true,
+  "homepage": "https://hql123.github.io/vue-ruby-china/",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",

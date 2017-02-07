@@ -53,8 +53,8 @@ export default {
   overflow: hidden;
   font-size: 15px;
   a{
-    text-decoration: none;
-    outline:none;
+    text-decoration: none !important;
+    outline:none !important;
     color: #000;
   }
   .topic-avatar{
@@ -77,7 +77,7 @@ export default {
       }
       a{
         &:hover{
-          color: #777;
+          color: #777 !important;
         }
       }
     }
@@ -86,9 +86,9 @@ export default {
       font-size: 12px;
       margin-top: 0;
       a{
-        color: #ABA8A6;
+        color: #ABA8A6 !important;
         &:hover{
-          text-decoration: underline;
+          text-decoration: underline !important;
         }
       }
     }
