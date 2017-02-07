@@ -73,7 +73,7 @@
       </div>
       <div class="panel-body row">
         <div v-for="topic in topics" class="col-md-6 topics_group">
-          <Topic :key="topic.id" :item="topic">
+          <Topic :key="topic.id" :item="topic" />
         </div>
       </div>
       <div class="panel-footer">
@@ -234,16 +234,19 @@ export default {
       }
     }
   }
-  .topics_group{
-    .topic{
-      .topic-infos{
-        height: 45px;
-        .topic-title{
-          height: 30px;
+  .panel{
+    .topics_group{
+      .topic{
+        .topic-infos{
+          height: 45px;
+          .topic-title{
+            height: 30px;
+          }
         }
       }
     }
   }
+  
   img {
     vertical-align: middle;
   }

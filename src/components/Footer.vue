@@ -37,15 +37,23 @@
     </div>
   </footer>
 </template>
+<script>
+  export default{
+    name: 'footer-component',
+  };
+</script>
 <style lang="scss">
-.media-body{
-  text-align: left;
-  color: #9CA4A9;
-  .links {
-    color: #ddd;
-  }
-  a{
-    color: #666;
+#footer{
+  .media-body{
+    text-align: left;
+    color: #9CA4A9;
+    .links {
+      color: #ddd;
+    }
+    a{
+      color: #666;
+    }
   }
 }
+
 </style>

@@ -34,10 +34,6 @@ export default {
 };
 </script>
 <style lang="scss">
-  body {
-    padding-top:65px;
-    background:#e9eaed;
-    color:#222527;
-  }
+  @import "../assets/stylesheets/app.css";
 
 </style>

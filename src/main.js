@@ -5,7 +5,7 @@ import './assets/js/bootstrap.min';
 // actually mount to DOM
 app.$mount('#app');
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
   navigator.serviceWorker.register('/service-worker.js').then(function(registration){
       console.log('Service worker registered : ', registration.scope);
     })

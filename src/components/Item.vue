@@ -29,7 +29,7 @@ import moment from 'moment';
 moment.locale('zh-CN');
 
 export default {
-  name: 'topics-item',
+  name: 'item',
   props: {
     item: Object,
   },
