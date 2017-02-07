@@ -69,4 +69,13 @@ export const fetchTopicsList = (tab, options) => {
 
 export const fetchNodesList = () => {
   return fetchGet('/nodes');
-}
+};
+
+export const fetchTopic = (topic_id) => {
+  return fetchGet('/topics/' + topic_id);
+};
+
+export const fetchRepliesList = (topic_id, options) => {
+  const newOptions = translateOptions(options);
+  return fetchGet(`/topics/${topic_id}/replies?${newOptions}`)
+};

@@ -2,6 +2,7 @@
 const activeType = (state) => {
   const current = state.route.path.split('/');
   let newOptions = '';
+  const topicId = current[2];
   if (current[1] === 'jobs') {
     newOptions += 'node_id=25';
   }
@@ -15,6 +16,6 @@ const activeType = (state) => {
     const offset = (state.route.query.page - 1) * 25;
     newOptions += `&offset=${offset}`;
   }
-  return { newOptions };
+  return { newOptions, topicId };
 };
 export default { activeType };

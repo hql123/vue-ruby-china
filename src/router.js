@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 const Dashboard = resolve => require(['./views/Dashboard'], resolve);
-// const createListView = resolve => require(['./views/createListView'], resolve);
+const TopicDetail = resolve => require(['./views/TopicDetail'], resolve);
 const Wiki = resolve => require(['./views/Wiki'], resolve);
 const Sites = resolve => require(['./views/Sites'], resolve);
 import createListView from './views/createListView';
@@ -18,6 +18,7 @@ const route = new Router({
     { path: '/topics/no_reply', component: createListView('no_reply') },
     { path: '/topics/last', component: createListView('recent') },
     { path: '/topics/excellent', component: createListView('excellent') },
+    { path: '/topics/:id', component: TopicDetail },
     { path: '/homeland', component: createListView('default') },
     { path: '/jobs', component: createListView('default') },
     { path: '/wiki', component: Wiki },

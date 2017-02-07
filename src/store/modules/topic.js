@@ -16,6 +16,11 @@ const state = {
     no_reply: initialState,
     excellent: initialState,
   },
+  detail: {
+    isFetching: false,
+    error: '',
+    item: {},
+  },
 };
 
 // getters
@@ -25,6 +30,7 @@ const getters = {};
 const actions = topicActions;
 /* eslint-disable */
 const mutations = {
+  /* topic list */
   [types.REFRESH_TOPICS] (state, { tab }) {
     state.lists[tab] = {
       ...state.lists[tab],
@@ -44,6 +50,27 @@ const mutations = {
     state.lists[tab].error = error;
     state.lists[tab].didInvalidate = false;
     state.lists[tab].isFetching = false;
+  },
+  /* topic detail */
+  [types.REQUEST_TOPIC] (state) {
+    state.detail = {
+      ...state.detail,
+      isFetching: true,
+    }
+  },
+  [types.RECEIVE_TOPIC_SUCCESS] (state, { topic }) {
+    state.detail = {
+      ...state.detail,
+      isFetching: false,
+      item: topic,
+    }
+  },
+  [types.RECEIVE_TOPIC_FAILURE] (state, { error }) {
+    state.detail = {
+      ...state.detail,
+      isFetching: false,
+      error: error,
+    }
   },
 };
 /* eslint-disable */
