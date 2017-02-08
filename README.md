@@ -2,6 +2,10 @@
 
 > Ruby China 山寨版 （Vue框架）
 
+## Demo
+
+https://hql123.github.io/
+
 ## 项目简介
 
 这个项目还是以Ruby China为范本搭建的模仿平台，Vue.js框架+Bootstrap框架开发，集成vue-cli + vuex + vue-router + vue-resource，大概还会尝试加入服务端渲染的SSR。这个项目我个人觉得挺适合Vuex的初学者尝试的，功能简单逻辑也不复杂，对于actions、 getters、mutations、modules的单向数据流模式应该都使用得挺清晰的。

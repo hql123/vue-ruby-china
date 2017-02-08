@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-
+import $ from 'jquery';
 import { mapState } from 'vuex';
 import HeaderComponent from '../components/Header';
 import FooterComponent from '../components/Footer';
@@ -28,9 +28,19 @@ export default {
   computed: {
     ...mapState({
       current: state => state.route.path.split('/')[1],
+      route: state => state.route,
     }),
   },
-
+  watch: {
+    route() {
+      this.hideNav();
+    },
+  },
+  methods: {
+    hideNav() {
+      $('#bs-example-navbar-collapse-1').collapse('hide');
+    },
+  },
 };
 </script>
 <style lang="scss">

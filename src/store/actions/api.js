@@ -5,7 +5,14 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 Vue.http.options.emulateJSON = true;
+/* 部署到github pages的配置
+Vue.http.options.emulateHTTP = true;
+Vue.http.headers.common['Content-Type'] = 'application/json';
+Vue.http.headers.common['Accept'] = 'application/json';
+
 // Vue.http.headers.common['Authorization'] = '';
+const context = 'https://ruby-china.org/api/v3';
+*/
 const context = '/api/v3';
 const fetchGet = (query) => {
   return Vue.http.get(context + query).then((response) => {

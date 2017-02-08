@@ -1,6 +1,6 @@
 <template>
   <div class="container dashboard">
-    <div class="panel panel-default">
+    <div class="panel panel-default hidden-xs">
       <div class="panel-body">
         <div class="media" style="width: 480px; margin:0px auto; text-align: left;">
           <div class="media-left">
@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row hidden-sm hidden-xs">
       <div class="col-md-3">
         <div class="item">
           <router-link to="/topics">
